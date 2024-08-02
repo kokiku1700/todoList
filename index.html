@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>투두 리스트</title>
+    <title>TodoList</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./favicon-book.png">
 </head>
@@ -12,15 +12,15 @@
         <div id="login-wrap">
             <h1 class="logo">Todo List</h1>
             <form>
-                <div>
-                    <input type="text" id="loginId" placeholder="Id를 입력하세요">
-                    <input type="password" id="loginPw" placeholder="비밀번호를 입력하세요">
+                <div class="input-wrap">
+                    <input type="text" id="loginId" placeholder="아이디를 입력하세요" autocomplete="off">
+                    <input type="password" id="loginPw" placeholder="비밀번호를 입력하세요" autocomplete="off">
                 </div>
-                <div>
-                    <a href="#">회원가입</a>
+                <div class="link-wrap">
+                    <a href="mj.html">회원가입</a>
                     <a href="#">아이디/비밀번호 찾기</a>
                 </div>
-                <button type="button">로그인</button>
+                <button type="button" class="loginBtn">로그인</button>
             </form>
         </div>
     </div>
