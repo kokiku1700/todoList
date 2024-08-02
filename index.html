@@ -11,22 +11,17 @@
     <div id="wrap">
         <div id="login-wrap">
             <h1 class="logo">Todo List</h1>
-            <form class="loginForm">
-                <input type="text" id="name" placeholder="이름 입력">
-                <div class="idWrap">
-                    <input type="text" id="id" placeholder="사용할 id 입력">
-                    <button type="button" class="idCheckBtn">중복확인</button>
-                </div>  
-                <div class="pwWrap">
-                    <input type="password" id="pw" placeholder="비밀번호">
-                    <input type="password" id="pwC" placeholder="비밀번호 확인">
+            <form>
+                <div>
+                    <input type="text" id="loginId" placeholder="Id를 입력하세요">
+                    <input type="password" id="loginPw" placeholder="비밀번호를 입력하세요">
                 </div>
-                
+                <div>
+                    <a href="#">회원가입</a>
+                    <a href="#">아이디/비밀번호 찾기</a>
+                </div>
+                <button type="button">로그인</button>
             </form>
-            <span>
-                <button type="button" class="checkBtn">확인</button>
-                <button type="button" class="cancelBtn">취소</button>
-            </span>
         </div>
     </div>
     <script src="./js/todoList.js"></script>
