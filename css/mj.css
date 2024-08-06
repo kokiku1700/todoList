@@ -39,11 +39,146 @@ html, body {
     border-radius: 10px;
     text-align: center;
     background-color: rgba(255, 255, 255, .8);
+    overflow-y: auto;
+}
+
+#joinMembership-wrap::-webkit-scrollbar{
+    width: 10px;
+}
+
+#joinMembership-wrap::-webkit-scrollbar-track{
+    background-color: white;
+    border-radius: 50px;
+}
+
+#joinMembership-wrap::-webkit-scrollbar-thumb{
+    background-color: rgb(223, 119, 119);
+    border-radius: 50px;
 }
 
 .logo {
     color: rgb(223, 119, 119);
     font-family: 'Cafe24Meongi-W-v1.0';
     font-size: 60px;
-    margin: 7% 0;
+    margin: 7% 0 1% 0;
+}
+
+.pageSubject {
+    font-size: 20px;
+    color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+}
+
+.formWrap {
+    margin: 0 auto;
+    width: 45%;
+}
+
+.formWrap p {
+    display: none;
+}
+
+.formWrap div {
+    margin: 14% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formWrap div span {
+    font-size: 20px;
+    color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+}
+
+input {
+    padding: 1.5% 5%;
+    border: 2px solid rgb(223, 119, 119);
+    border-radius: 50px;
+    color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+    font-size: 16px;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: rgb(244, 93, 93);
+}
+
+.checkBtn {
+    margin-right: 5%;
+    padding: 4% 10%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(223, 119, 119);
+    cursor: pointer;
+    font-family: 'KyoboHand';
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.cancelBtn {
+    margin-left: 5%;
+    padding: 4% 10%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(223, 119, 119);
+    cursor: pointer;
+    font-family: 'KyoboHand';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: rgb(244, 93, 93);
+}
+
+@media all and (max-width:1360px) {
+    .formWrap {
+        width: 60%;
+    }
+
+    .formWrap div {
+        margin: 11% 0;
+    }
+
+    .checkBtn {
+        padding: 3% 8%;
+    }
+    .cancelBtn {
+        padding: 3% 8%;
+    }
+}
+
+@media all and (max-width:1024px) {
+    #joinMembership-wrap {
+        width: 70%;
+    }
+
+    .formWrap {
+        width: 60%;
+    }
+
+    .formWrap div {
+        margin: 10% 0;
+    }
+}
+
+@media all and (max-width:768px) {
+    #joinMembership-wrap {
+        width: 80%;
+    }
+
+    .formWrap {
+        width: 70%;
+    }
+    
+    .formWrap div {
+        margin: 11% 0;
+    }
+    .formWrap div span {
+        font-size: 18px;
+    }
 }

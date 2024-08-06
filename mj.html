@@ -11,7 +11,35 @@
     <div id="wrap">
         <div id="joinMembership-wrap">
             <h1 class="logo">Todo List</h1>
+            <h6 class="pageSubject">회원가입</h6>
+            <section class="formWrap">
+                <div class="nameWrap">
+                    <span class="spanName">이름</span>
+                    <input type="text" id="name" autocomplete="off">
+                </div>
+                <p>이름을 입력하세요.</p>
+                <p>양식이 잘못되었습니다.</p>
+                <div class="idWrap">
+                    <span>아이디</span>
+                    <input type="text" id="id" autocomplete="off">
+                </div>
+                <p>아이디를 입력하세요</p>
+                <P></P>
+                <div class="pwWrap">
+                    <span>비밀번호</span>
+                    <input type="password" id="pw" autocomplete="off">
+                </div>
+                <div class="pwCheckWrap">
+                    <span>비밀번호 확인</span>
+                    <input type="password" id="pwCheck" autocomplete="off">
+                </div>
+                <span class="BtnWrap">
+                    <button type="button" class="checkBtn">확인</button>
+                    <button type="button" class="cancelBtn" onclick="location.href='index.html'">취소</button>
+                </span>
+            </section>
         </div>
     </div>
+    <script src="./js/mj.js"></script>
 </body>
 </html>

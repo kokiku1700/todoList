@@ -96,14 +96,6 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 500px rgb(223, 119, 119) inset !important;
 }
 
-.link-wrap {
-
-}
-
-.loginBtn:hover {
-    background-color: rgb(244, 93, 93);
-}
-
 .link-wrap a {
     margin: 0 2%;
     text-decoration: none;
@@ -127,6 +119,10 @@ input:-webkit-autofill {
     font-family: 'KyoboHand';
     font-weight: bold;
     font-size: 15px;
+}
+
+.loginBtn:hover {
+    background-color: rgb(244, 93, 93);
 }
 
 @media all and (max-width:1360px) {
