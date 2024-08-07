@@ -79,7 +79,7 @@ html, body {
 }
 
 .formWrap div {
-    margin: 14% 0;
+    margin: 12.5% 0;
     display: flex;
     justify-content: space-between;
 }
@@ -105,8 +105,13 @@ input:focus {
     border-color: rgb(244, 93, 93);
 }
 
+.btnWrap {
+    display: block;
+    padding: 5% 0;
+}
+
 .checkBtn {
-    margin-right: 5%;
+    margin-right: 2%;
     padding: 4% 10%;
     color: white;
     border: none;
@@ -119,7 +124,7 @@ input:focus {
 
 }
 .cancelBtn {
-    margin-left: 5%;
+    margin-left: 2%;
     padding: 4% 10%;
     color: white;
     border: none;
@@ -133,6 +138,14 @@ input:focus {
 
 button:hover {
     background-color: rgb(244, 93, 93);
+}
+
+p {
+    margin: -12% 0 0 0;
+    color: rgb(233, 9, 9);
+    font-family: 'KyoboHand';
+    font-weight: bold;
+    font-size: 15px;
 }
 
 @media all and (max-width:1360px) {
