@@ -32,7 +32,7 @@ html, body {
     background-size: 100% 100%;
 }
 
-#joinMembership-wrap {
+#jmSuccess-wrap {
     width: 50%;
     height: 80%;
     border: 2px solid rgb(223, 119, 119);
@@ -41,18 +41,19 @@ html, body {
     background-color: rgba(255, 255, 255, .8);
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
 }
 
-#joinMembership-wrap::-webkit-scrollbar{
+#jmSuccess-wrap::-webkit-scrollbar{
     width: 10px;
 }
 
-#joinMembership-wrap::-webkit-scrollbar-track{
+#jmSuccess-wrap::-webkit-scrollbar-track{
     background-color: white;
     border-radius: 50px;
 }
 
-#joinMembership-wrap::-webkit-scrollbar-thumb{
+#jmSuccess-wrap::-webkit-scrollbar-thumb{
     background-color: rgb(223, 119, 119);
     border-radius: 50px;
 }
@@ -77,135 +78,42 @@ html, body {
     }
 }
 
-.pageSubject {
-    font-size: 20px;
-    color: rgb(223, 119, 119);
+.welcomeUser {
+    margin: 20% 0;
     font-family: 'KyoboHand';
-}
-
-.formWrap {
-    margin: 0 auto;
-    width: 45%;
-}
-
-.formWrap p {
-    display: none;
-}
-
-.formWrap div {
-    margin: 12.5% 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.formWrap div span {
-    font-size: 20px;
+    letter-spacing: 3px;
     color: rgb(223, 119, 119);
-    font-family: 'KyoboHand';
+    font-weight: bold;
 }
 
-input {
-    padding: 1.5% 5%;
-    border: 2px solid rgb(223, 119, 119);
-    border-radius: 50px;
-    color: rgb(223, 119, 119);
-    font-family: 'KyoboHand';
-    font-size: 16px;
-}
-
-
-input:focus {
-    outline: none;
-    border-color: rgb(244, 93, 93);
-}
-
-.btnWrap {
-    display: block;
-    padding: 5% 0;
-}
-
-.checkBtn {
-    margin-right: 2%;
-    padding: 4% 10%;
+.homeBtn {
+    padding: 1% 5%;
     color: white;
     border: none;
     border-radius: 10px;
     background-color: rgb(223, 119, 119);
     cursor: pointer;
     font-family: 'KyoboHand';
-    font-weight: bold;
-    font-size: 15px;
-
-}
-.cancelBtn {
-    margin-left: 2%;
-    padding: 4% 10%;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    background-color: rgb(223, 119, 119);
-    cursor: pointer;
-    font-family: 'KyoboHand';
-    font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
 }
 
-button:hover {
-    background-color: rgb(244, 93, 93);
-}
-
-p {
-    margin: -12% 0 0 0;
-    color: rgb(233, 9, 9);
-    font-family: 'KyoboHand';
-    font-weight: bold;
-    font-size: 15px;
-}
 
 @media all and (max-width:1360px) {
-    .formWrap {
-        width: 60%;
-    }
 
-    .formWrap div {
-        margin: 11% 0;
-    }
-
-    .checkBtn {
-        padding: 3% 8%;
-    }
-    .cancelBtn {
-        padding: 3% 8%;
-    }
 }
 
 @media all and (max-width:1024px) {
-    #joinMembership-wrap {
+    #jmSuccess-wrap {
         width: 70%;
-    }
-
-    .formWrap {
-        width: 60%;
-    }
-
-    .formWrap div {
-        margin: 10% 0;
     }
 }
 
 @media all and (max-width:768px) {
-    #joinMembership-wrap {
+    #jmSuccess-wrap {
         width: 80%;
     }
 
-    .formWrap {
-        width: 70%;
-    }
-    
-    .formWrap div {
-        margin: 11% 0;
-    }
-    .formWrap div span {
-        font-size: 18px;
+    .welcomeUser {
+        margin: 27% 0;
     }
 }

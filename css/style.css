@@ -41,6 +41,7 @@ html, body {
     text-align: center;
     background-color: rgba(255, 255, 255, .8);
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #login-wrap::-webkit-scrollbar{
@@ -62,6 +63,19 @@ html, body {
     font-family: 'Cafe24Meongi-W-v1.0';
     font-size: 60px;
     margin: 7% 0;
+    animation: animate 3s infinite;
+}
+
+@keyframes animate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
 }
 
 
