@@ -38,6 +38,7 @@ idInput.addEventListener('focusout', () => {
     const spanId = document.getElementsByClassName("spanId");
     const emptyId = document.getElementsByClassName("emptyId");
     const errId = document.getElementsByClassName("errId");
+    const n = localStorage.length;
 
     if ( reg.test(idInput.value) ) {
         idInput.style.borderColor = "rgb(96, 220, 98)";
@@ -46,6 +47,16 @@ idInput.addEventListener('focusout', () => {
         errId[0].style.display = "none";
         emptyId[0].style.display = "none";
         idBool = true;
+        for ( let i = 0; i < n; i++ ) {
+            if ( localStorage.key(i) === idInput.value ) {
+                idInput.style.borderColor = "rgb(233, 9, 9)";
+                idInput.style.color = "rgb(233, 9, 9)";
+                spanId[0].style.color = "rgb(233, 9, 9)";
+                idBool = false;
+                break;
+            }
+        }
+        
     } else if ( idInput.value === "" ) {
         idInput.style.borderColor = "rgb(233, 9, 9)";
         idInput.style.color = "rgb(233, 9, 9)";
