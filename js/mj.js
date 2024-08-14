@@ -13,14 +13,12 @@ nameInput.addEventListener('focusout', () => {
         spanName[0].style.color = "rgb(96, 220, 98)";
         errName[0].style.display = "none";
         emptyName[0].style.display = "none";
-        nameBool = true;
     } else if ( nameInput.value === "" ) {
         nameInput.style.borderColor = "rgb(233, 9, 9)";
         nameInput.style.color = "rgb(233, 9, 9)";
         spanName[0].style.color = "rgb(233, 9, 9)";
         emptyName[0].style.display = "block";
         errName[0].style.display = "none";
-        nameBool = false
     } else {
         nameInput.style.borderColor = "rgb(233, 9, 9)";
         nameInput.style.color = "rgb(233, 9, 9)";
@@ -38,6 +36,7 @@ idInput.addEventListener('focusout', () => {
     const spanId = document.getElementsByClassName("spanId");
     const emptyId = document.getElementsByClassName("emptyId");
     const errId = document.getElementsByClassName("errId");
+    const existId = document.getElementsByClassName("existId");
     const n = localStorage.length;
 
     if ( reg.test(idInput.value) ) {
@@ -46,30 +45,33 @@ idInput.addEventListener('focusout', () => {
         spanId[0].style.color = "rgb(96, 220, 98)";
         errId[0].style.display = "none";
         emptyId[0].style.display = "none";
-        idBool = true;
+        existId[0].style.display = "none";
+        
         for ( let i = 0; i < n; i++ ) {
             if ( localStorage.key(i) === idInput.value ) {
                 idInput.style.borderColor = "rgb(233, 9, 9)";
                 idInput.style.color = "rgb(233, 9, 9)";
                 spanId[0].style.color = "rgb(233, 9, 9)";
-                idBool = false;
+                errId[0].style.display = "none";
+                emptyId[0].style.display = "none";
+                existId[0].style.display = "block";
                 break;
             }
-        }
-        
+        };  
     } else if ( idInput.value === "" ) {
         idInput.style.borderColor = "rgb(233, 9, 9)";
         idInput.style.color = "rgb(233, 9, 9)";
         spanId[0].style.color = "rgb(233, 9, 9)";
         emptyId[0].style.display = "block";
         errId[0].style.display = "none";
-        idBool = false;
+        existId[0].style.display = "none";
     } else {
         idInput.style.borderColor = "rgb(233, 9, 9)";
         idInput.style.color = "rgb(233, 9, 9)";
         spanId[0].style.color = "rgb(233, 9, 9)";
         errId[0].style.display = "block";
         emptyId[0].style.display = "none";
+        existId[0].style.display = "none";
     }
 });
 
@@ -88,14 +90,12 @@ pwInput.addEventListener('focusout', () => {
         spanPw[0].style.color = "rgb(96, 220, 98)";
         errPw[0].style.display = "none";
         emptyPw[0].style.display = "none";
-        pwBool = true;
     } else if ( pwInput.value === "" ) {
         pwInput.style.borderColor = "rgb(233, 9, 9)";
         pwInput.style.color = "rgb(233, 9, 9)";
         spanPw[0].style.color = "rgb(233, 9, 9)";
         emptyPw[0].style.display = "block";
         errPw[0].style.display = "none";
-        pwBool = false;
     } else {
         pwInput.style.borderColor = "rgb(233, 9, 9)";
         pwInput.style.color = "rgb(233, 9, 9)";
@@ -119,14 +119,12 @@ pwCheckInput.addEventListener('focusout', () => {
         spanPwCheck[0].style.color = "rgb(96, 220, 98)";
         errPwCheck[0].style.display = "none";
         emptyPwCheck[0].style.display = "none";
-        pwCheckBool = true;
     } else if ( pwInput.value === "" && pwCheckInput.value === "" ) {
         pwCheckInput.style.borderColor = "rgb(233, 9, 9)";
         pwCheckInput.style.color = "rgb(233, 9, 9)";
         spanPwCheck[0].style.color = "rgb(233, 9, 9)";
         emptyPwCheck[0].style.display = "block";
         errPwCheck[0].style.display = "none";
-        pwCheckBool = false;
     } else {
         pwCheckInput.style.borderColor = "rgb(233, 9, 9)";
         pwCheckInput.style.color = "rgb(233, 9, 9)";
@@ -167,5 +165,3 @@ checkBtn[0].addEventListener('click', () => {
 
     }
 });
-
-

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기</title>
+    <link rel="stylesheet" href="./css/idFind.css">
+    <link rel="icon" href="./favicon-book.png">
+</head>
+<body>
+    <div id="wrap">
+        <div id="idFind-wrap">
+            <h1 class="logo">Todo List</h1>
+            <h6 class="pageSubject">아이디 찾기</h6>
+            <div class="idFindBefore">
+                <p>이름을 입력해주세요</p>
+                <input type="text" id="idFind">
+                <div class="btnWrap">
+                    <button type="button" class="checkBtn">확인</button>
+                    <button type="button" class="cancelBtn" onclick="history.back()">취소</button>
+                </div>
+            </div>
+            <div class="idFindAfter">
+                <ul class="idList"></ul>
+                <div>
+                    <button type="button">확인</button>
+                    <button type="button">비밀번호 찾기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/idFind.js"></script>
+</body>
+</html>
