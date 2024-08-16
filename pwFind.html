@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디 찾기</title>
-    <link rel="stylesheet" href="./css/idFind.css">
+    <title>비밀번호 찾기</title>
     <link rel="icon" href="./favicon-book.png">
+    <link rel="stylesheet" href="./css/pwFind.css">
 </head>
 <body>
     <div id="wrap">
-        <div id="idFind-wrap">
+        <div id="pwFind-wrap">
             <h1 class="logo">Todo List</h1>
             <h6 class="pageSubject">아이디 찾기</h6>
-            <div class="idFindBefore">
-                <p>이름을 입력해주세요</p>
-                <input type="text" id="idFind" autocomplete="off">
+            <div class="pwFindBefore">
+                <p>아이디를 입력해주세요</p>
+                <input type="text" id="pwFind" autocomplete="off">
                 <div class="btnWrap">
                     <button type="button" class="checkBtn">확인</button>
                     <button type="button" class="cancelBtn" onclick="history.back()">취소</button>
                 </div>
             </div>
-            <div class="idFindAfter">
-                <ul class="idList"></ul>
+            <div class="pwFindAfter">
+                <ul class="pwList"></ul>
                 <div>
                     <button type="button" class="homeBtn" onclick="location.href='login.html'">확인</button>
-                    <button type="button" class="pwFindBtn">비밀번호 찾기</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./js/idFind.js"></script>
+    <script src="./js/pwFind.js"></script>
 </body>
 </html>

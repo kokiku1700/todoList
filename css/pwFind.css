@@ -33,7 +33,7 @@ html, body {
     background-size: 100% 100%;
 }
 
-#idFind-wrap {
+#pwFind-wrap {
     width: 50%;
     height: 80%;
     border: 2px solid rgb(223, 119, 119);
@@ -44,16 +44,16 @@ html, body {
     overflow-x: hidden;
 }
 
-#idFind-wrap::-webkit-scrollbar{
+#pwFind-wrap::-webkit-scrollbar{
     width: 10px;
 }
 
-#idFind-wrap::-webkit-scrollbar-track{
+#pwFind-wrap::-webkit-scrollbar-track{
     background-color: white;
     border-radius: 50px;
 }
 
-#idFind-wrap::-webkit-scrollbar-thumb{
+#pwFind-wrap::-webkit-scrollbar-thumb{
     background-color: rgb(223, 119, 119);
     border-radius: 50px;
 }
@@ -85,12 +85,12 @@ html, body {
     font-family: 'KyoboHand';
 }
 
-.idFindBefore {
+.pwFindBefore {
     width: 70%;
     margin: 0 auto;
 }
 
-.idFindBefore p {
+.pwFindBefore p {
     font-size: 25px;
     font-family: 'KyoboHand';
     letter-spacing: 3px;
@@ -111,7 +111,7 @@ button {
     line-height: 100%;
 }
 
-#idFind {
+#pwFind {
     margin: 8% 0 10% 0;
     padding: 2% 5%;
     border: 2px solid rgb(223, 119, 119);
@@ -121,12 +121,12 @@ button {
     font-size: 16px;
 }
 
-#idFind:focus {
+#pwFind:focus {
     outline: none;
     border-color: rgb(244, 93, 93);
 }
 
-.idFindAfter {
+.pwFindAfter {
     display: none;
     width: 70%;
     margin: 0 auto;
