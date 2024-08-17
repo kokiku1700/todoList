@@ -122,8 +122,16 @@ input:-webkit-autofill {
     color: rgb(244, 93, 93);
 }
 
+p {
+    display: none;
+    margin: 2% 0;
+    font-weight: bold;
+    color: rgb(244, 93, 93);
+}
+
+
 .loginBtn {
-    margin-top: 8%;
+    margin-top: 5%;
     padding: 2% 5%;
     color: white;
     border: none;

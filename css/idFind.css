@@ -143,3 +143,35 @@ li {
     font-family: 'KyoboHand';
     list-style: none;
 }
+
+@media all and (max-width:1360px) {
+
+    .logo {
+        margin: 13% 0 5% 0;
+    }
+
+
+}
+
+@media all and (max-width:1024px) {
+    #idFind-wrap {
+        width: 70%;
+    }
+
+    .logo {
+        margin: 13% 0 5% 0;
+    }
+
+}
+
+@media all and (max-width:768px) {
+    #idFind-wrap {
+        width: 80%;
+
+    }
+
+    .logo {
+        margin: 13% 0 10% 0;
+    }
+
+}
