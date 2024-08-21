@@ -13,14 +13,19 @@ loginBtn[0].addEventListener('click', () => {
         const pwCheck = member.memberIm.password;
         if ( loginId.value === idCheck && loginPw.value === pwCheck ) {
             loginBool = true;
+            member.memberIm.login = "on";
+            const memberS = JSON.stringify(member)
+            localStorage.setItem(idCheck, memberS);
             break;
         };
     };
 
     if ( loginBool ) {
+        idPwErr[0].style.display = "none";
         location.href = "todoList.html";
-        idPwErr[0].style.display = "block";
     } else {
         idPwErr[0].style.display = "block";
     }
-})
+});
+
+

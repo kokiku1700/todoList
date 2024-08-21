@@ -155,13 +155,13 @@ checkBtn[0].addEventListener('click', () => {
             memberIm: {
                 "id" :idInput.value,
                 "name": nameInput.value,
-                "password": pwInput.value
+                "password": pwInput.value,
+                "login": "off"
             }
         };
         let values = JSON.stringify(impormation);
         
         localStorage.setItem(key, values);
         location.href = "jmSuccess.html";
-
     }
 });
