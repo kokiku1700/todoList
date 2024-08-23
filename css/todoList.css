@@ -62,8 +62,118 @@ html, body {
     color: rgb(223, 119, 119);
     font-family: 'Cafe24Meongi-W-v1.0';
     font-size: 60px;
-    margin: 7% 0;
+    margin: 7% 0 1% 0;
     animation: animate 3s infinite;
+}
+
+h2 {
+    font-family: 'KyoboHand';
+}
+
+b {
+    font-family: 'KyoboHand';
+    color: rgb(223, 119, 119);
+}
+
+.todoList {
+    width: 70%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 2%;
+    background-color: aliceblue;
+}
+
+.insert-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.insert {
+    width: 70%;
+    padding: 2%;
+    margin-right: 2%;
+    color: rgb(223, 119, 119);
+    font-size: 16px;
+    font-family: 'KyoboHand';
+    border: none;
+    border-bottom: 2px solid rgb(233, 177, 177);
+    background-color: transparent;
+}
+
+.insert::placeholder {
+    color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+}
+
+.insert:focus {
+    outline: none;
+    border-bottom: 3px solid rgb(223, 119, 119);
+}
+
+.insertBtn {
+    width: 20%;
+    padding: 2%;
+    border: none;
+    font-size: 16px;
+    color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.insertBtn:hover {
+    color: #fff;
+    background-color: rgb(223, 119, 119);
+}
+
+.list-wrap {
+    
+}
+
+.list-wrap li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 2% 7%;
+}
+
+.list-wrap li span:nth-child(1) {
+    width: 60%;
+    display: flex;
+    justify-content: left;
+}
+
+label {
+    font-family: 'KyoboHand';
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+.list-wrap li span:nth-child(2) {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-wrap li span img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.logoutBtn {
+    margin-top: 1%;
+    padding: .5% 1.5%;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(223, 119, 119);
+    font-family: 'KyoboHand';
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 @keyframes animate {
@@ -76,4 +186,36 @@ html, body {
     100% {
       transform: scale(1);
     }
+}
+
+
+@media all and (max-width:1360px) {
+
+    .logo {
+        margin: 13% 0 5% 0;
+    }
+
+}
+
+@media all and (max-width:1024px) {
+    #todoList-wrap {
+        width: 70%;
+    }
+
+    .logo {
+        margin: 13% 0 5% 0;
+    }
+
+}
+
+@media all and (max-width:768px) {
+    #todoList-wrap {
+        width: 80%;
+
+    }
+
+    .logo {
+        margin: 13% 0 10% 0;
+    }
+
 }
