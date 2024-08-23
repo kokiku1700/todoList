@@ -156,7 +156,8 @@ checkBtn[0].addEventListener('click', () => {
                 "id" :idInput.value,
                 "name": nameInput.value,
                 "password": pwInput.value,
-                "login": "off"
+                "login": "off",
+                "todoList": ""
             }
         };
         let values = JSON.stringify(impormation);

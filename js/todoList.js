@@ -7,12 +7,44 @@ const n = localStorage.length;
 for (let i = 0; i < n; i++ ) {
     const loc = localStorage.getItem(localStorage.key(i));
     const member = JSON.parse(loc);
+
     if ( member.memberIm.login === "on" ) {
         memberName[0].innerText = member.memberIm.name;
+        let listLen = member.memberIm.todoList.length;
+
+        for ( let i = 0; i < listLen; i++ ) {
+            const listWrap = document.getElementsByClassName("list-wrap");
+            const li = document.createElement("li");
+            const span1 = document.createElement("span");
+            const span2 = document.createElement("span");
+            const labelE = document.createElement("label");
+            const inputE = document.createElement("input");
+            const imgE1 = document.createElement("img");
+            const imgE2 = document.createElement("img");
+
+            listWrap[0].appendChild(li);
+            li.appendChild(span1);
+            li.appendChild(span2);
+
+            span1.appendChild(inputE);
+            span1.appendChild(labelE);
+            
+            inputE.setAttribute('id', 'listLi');
+            inputE.type = 'checkbox';
+
+            labelE.setAttribute('for', 'listLi');
+            labelE.style.userSelect = "none";
+            labelE.innerText = member.memberIm.todoList[i];
+            
+            span2.appendChild(imgE1);
+            span2.appendChild(imgE2);
+
+            imgE1.src = "./edit.png";
+            imgE2.src = "./garbage.png";
+        }
         break;
     };
 };
-
 
 
 insertBtn[0].addEventListener('click', () => {
@@ -45,19 +77,30 @@ insertBtn[0].addEventListener('click', () => {
 
         imgE1.src = "./edit.png";
         imgE2.src = "./garbage.png";
-    }
 
-    
+        for (let i = 0; i < n; i++ ) {
+            const loc = localStorage.getItem(localStorage.key(i));
+            const member = JSON.parse(loc);
+            const idCheck = member.memberIm.id;
+
+            if ( member.memberIm.login === "on" ) {
+                member.memberIm.todoList.push(insert[0].value);
+                const memberS = JSON.stringify(member)
+                localStorage.setItem(idCheck, memberS);
+                break;
+            };
+        };
+    }
 
     insert[0].value = "";
 });
 
-const listLi = document.getElementsByClassName("listLi");
-const labelC = document.querySelector("label");
+// const listLi = document.getElementsByClassName("listLi");
+// const labelC = document.querySelector("label");
 
-for ( let i = 0; i < listLi.length; i++ ) {
-    listLi[i].checked === "true" ? labelC.style.textDecoration = "underline" : false;
-}
+// for ( let i = 0; i < listLi.length; i++ ) {
+//     listLi[i].checked === "true" ? labelC.style.textDecoration = "underline" : false;
+// }
 
 logoutBtn[0].addEventListener('click', () => {
     for (let i = 0; i < n; i++ ) {
@@ -73,4 +116,20 @@ logoutBtn[0].addEventListener('click', () => {
         };
     };
     location.replace("login.html");
+});
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    for (let i = 0; i < n; i++ ) {
+        const loc = localStorage.getItem(localStorage.key(i));
+        const member = JSON.parse(loc);
+        const idCheck = member.memberIm.id;
+
+        if ( member.memberIm.login === "on" ) {
+            member.memberIm.login = "off";
+            const memberS = JSON.stringify(member)
+            localStorage.setItem(idCheck, memberS);
+            break;
+        };
+    };
 });
