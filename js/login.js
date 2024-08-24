@@ -5,6 +5,8 @@ const idPwErr = document.getElementsByClassName("idPwErr");
 let loginBool = false;
 const n = localStorage.length;
 
+reset();
+
 loginBtn[0].addEventListener('click', () => {
     for (let i = 0; i < n; i++ ) {
         const loc = localStorage.getItem(localStorage.key(i));
@@ -28,4 +30,14 @@ loginBtn[0].addEventListener('click', () => {
     }
 });
 
+function reset () {
+    for (let i = 0; i < n; i++ ) {
+        const loc = localStorage.getItem(localStorage.key(i));
+        const member = JSON.parse(loc);
+        const idCheck = member.memberIm.id;
 
+        member.memberIm.login = "off";
+        const memberS = JSON.stringify(member)
+        localStorage.setItem(idCheck, memberS);
+    };
+};

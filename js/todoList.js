@@ -29,10 +29,11 @@ for (let i = 0; i < n; i++ ) {
             span1.appendChild(inputE);
             span1.appendChild(labelE);
             
-            inputE.setAttribute('id', 'listLi');
+            inputE.setAttribute('id', `listLi${i}`);
             inputE.type = 'checkbox';
 
-            labelE.setAttribute('for', 'listLi');
+            labelE.setAttribute('for', `listLi${i}`);
+            labelE.setAttribute('class', `label${i}`);
             labelE.style.userSelect = "none";
             labelE.innerText = member.memberIm.todoList[i];
             
@@ -41,6 +42,10 @@ for (let i = 0; i < n; i++ ) {
 
             imgE1.src = "./edit.png";
             imgE2.src = "./garbage.png";
+            imgE1.setAttribute("class", "editImg");
+            imgE2.setAttribute("class", "removeImg");
+            imgE1.style.userSelect = "none";
+            imgE2.style.userSelect = "none";
         }
         break;
     };
@@ -69,6 +74,8 @@ insertBtn[0].addEventListener('click', () => {
         inputE.type = 'checkbox';
 
         labelE.setAttribute('for', 'listLi');
+        labelE.setAttribute('class', `label$`);
+
         labelE.style.userSelect = "none";
         labelE.innerText = insert[0].value;
         
@@ -77,6 +84,10 @@ insertBtn[0].addEventListener('click', () => {
 
         imgE1.src = "./edit.png";
         imgE2.src = "./garbage.png";
+        imgE1.setAttribute("class", "editImg");
+        imgE2.setAttribute("class", "removeImg");
+        imgE1.style.userSelect = "none";
+        imgE2.style.userSelect = "none";
 
         for (let i = 0; i < n; i++ ) {
             const loc = localStorage.getItem(localStorage.key(i));
@@ -118,18 +129,16 @@ logoutBtn[0].addEventListener('click', () => {
     location.replace("login.html");
 });
 
-window.addEventListener('beforeunload', (event) => {
-    event.preventDefault();
-    for (let i = 0; i < n; i++ ) {
-        const loc = localStorage.getItem(localStorage.key(i));
-        const member = JSON.parse(loc);
-        const idCheck = member.memberIm.id;
+const editImg = document.querySelectorAll(".editImg");
 
-        if ( member.memberIm.login === "on" ) {
-            member.memberIm.login = "off";
-            const memberS = JSON.stringify(member)
-            localStorage.setItem(idCheck, memberS);
-            break;
-        };
-    };
-});
+editImg.forEach((e, i) => {
+    e.addEventListener('click', () => {
+        const inputChange = document.getElementById(`listLi${i}`);
+        const labelChange = document.getElementsByClassName(`label${i}`);
+        let text = labelChange[0].innerText;
+        inputChange.type = "text";
+        inputChange.value = text;
+        labelChange[0].innerText = "";
+        console.log(text)
+    })
+})
