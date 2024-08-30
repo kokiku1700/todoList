@@ -22,6 +22,8 @@ for (let i = 0; i < n; i++ ) {
             const inputE = document.createElement("input");
             const imgE1 = document.createElement("img");
             const imgE2 = document.createElement("img");
+            const imgE3 = document.createElement("img");
+            const imgE4 = document.createElement("img");
 
             listWrap[0].appendChild(li);
             li.appendChild(span1);
@@ -31,22 +33,43 @@ for (let i = 0; i < n; i++ ) {
             span1.appendChild(labelE);
             
             inputE.setAttribute('id', `listLi${i}`);
+            inputE.setAttribute('class', 'editInput');
             inputE.type = 'checkbox';
+
+            if ( member.memberIm.todoList[i].bool === true ) {
+                inputE.setAttribute("checked", "true");
+                labelE.style.textDecoration = "line-through";
+                labelE.style.color = "#aaa";
+            } else {
+                labelE.style.textDecoration = "none";
+                labelE.style.color = "rgb(223, 119, 119)";
+            }
 
             labelE.setAttribute('for', `listLi${i}`);
             labelE.setAttribute('class', `label${i}`);
             labelE.style.userSelect = "none";
-            labelE.innerText = member.memberIm.todoList[i];
+            labelE.innerText = member.memberIm.todoList[i].list;
             
             span2.appendChild(imgE1);
             span2.appendChild(imgE2);
+            span2.appendChild(imgE3);
+            span2.appendChild(imgE4);
 
             imgE1.src = "./edit.png";
             imgE2.src = "./garbage.png";
+            imgE3.src = "./ok.png";
+            imgE4.src = "./cancel.png";
             imgE1.setAttribute("class", "editImg");
             imgE2.setAttribute("class", "removeImg");
+            imgE3.setAttribute("class", "okImg");
+            imgE4.setAttribute("class", "cancelImg");
             imgE1.style.userSelect = "none";
             imgE2.style.userSelect = "none";
+            imgE3.style.userSelect = "none";
+            imgE4.style.userSelect = "none";
+
+            imgE3.style.display = "none";
+            imgE4.style.display = "none";
         }
         break;
     };
@@ -54,77 +77,119 @@ for (let i = 0; i < n; i++ ) {
 
 // 추가 버튼 클릭 시 입력한 내용을 저장 및 추가
 insertBtn[0].addEventListener('click', () => {
-    const listWrap = document.getElementsByClassName("list-wrap");
-    const li = document.createElement("li");
-    const span1 = document.createElement("span");
-    const span2 = document.createElement("span");
-    const labelE = document.createElement("label");
-    const inputE = document.createElement("input");
-    const imgE1 = document.createElement("img");
-    const imgE2 = document.createElement("img");
-
-    for (let i = 0; i < n; i++ ) {
-        const loc = localStorage.getItem(localStorage.key(i));
-        const member = JSON.parse(loc);
-        const idCheck = member.memberIm.id;
-        
-        if ( member.memberIm.login === "on" ) {
-            if ( insert[0].value !== "" ) {
-                listWrap[0].appendChild(li);
-                li.appendChild(span1);
-                li.appendChild(span2);
-
-                span1.appendChild(inputE);
-                span1.appendChild(labelE);
-                
-                inputE.type = 'checkbox';
-    
-                labelE.style.userSelect = "none";
-                labelE.innerText = insert[0].value;
-                
-                span2.appendChild(imgE1);
-                span2.appendChild(imgE2);
-
-                imgE1.src = "./edit.png";
-                imgE2.src = "./garbage.png";
-
-                imgE1.style.userSelect = "none";
-                imgE2.style.userSelect = "none";
+    if ( insert[0].value !== "" ) {
+        for (let i = 0; i < n; i++ ) {
+            const loc = localStorage.getItem(localStorage.key(i));
+            const member = JSON.parse(loc);
+            const idCheck = member.memberIm.id;
+            const todoKey = insert[0].value;
+            const tList = {
+                "list": todoKey,
+                "bool": false
             }
-            member.memberIm.todoList.push(insert[0].value);
-            const memberS = JSON.stringify(member)
-            localStorage.setItem(idCheck, memberS);
-            location.reload();
-            break;
+            if ( member.memberIm.login === "on" ) {
+                member.memberIm.todoList.push(tList);
+                const memberS = JSON.stringify(member)
+                localStorage.setItem(idCheck, memberS);
+                location.reload();
+                break;
+            };
         };
-    };
-
+    }
     insert[0].value = "";
 });
 
-// const listLi = document.getElementsByClassName("listLi");
-// const labelC = document.querySelector("label");
+// 체크박스 클릭시 선 긋고 클자색 변경
+const editInput = document.querySelectorAll(".editInput");
 
-// for ( let i = 0; i < listLi.length; i++ ) {
-//     listLi[i].checked === "true" ? labelC.style.textDecoration = "underline" : false;
-// }
+editInput.forEach((e, i) => {
+    e.addEventListener("click", () => {
+        const labelC = document.getElementsByClassName(`label${i}`);
+        
+        for (let j = 0; j < n; j++ ) {
+            const loc = localStorage.getItem(localStorage.key(j));
+            const member = JSON.parse(loc);
+            const idCheck = member.memberIm.id;
 
-
-
+            if ( member.memberIm.login === "on" ) {
+                member.memberIm.todoList[i].bool = !member.memberIm.todoList[i].bool
+                const memberS = JSON.stringify(member)
+                localStorage.setItem(idCheck, memberS);
+                break;
+            };
+        };
+        if ( e.checked === true ) {
+            labelC[0].style.textDecoration = "line-through";
+            labelC[0].style.color = "#aaa";
+        } else {
+            labelC[0].style.textDecoration = "none";
+            labelC[0].style.color = "rgb(223, 119, 119)";
+        }
+    });
+});
 
 // 목록에 수정 버튼 클릭 시 해당 목록 수정
 const editImg = document.querySelectorAll(".editImg");
+const okImg = document.querySelectorAll(".okImg");
+const cancelImg = document.querySelectorAll(".cancelImg");
 
 editImg.forEach((e, i) => {
     e.addEventListener('click', () => {
         const inputChange = document.getElementById(`listLi${i}`);
         const labelChange = document.getElementsByClassName(`label${i}`);
         let text = labelChange[0].innerText;
+
+        e.style.display = "none";
+        removeImg[i].style.display = "none";
+        okImg[i].style.display = "inline";
+        cancelImg[i].style.display = "inline";
+        
         inputChange.type = "text";
+        inputChange.setAttribute("autocomplete", "off");
+        inputChange.focus();
         inputChange.value = text;
         labelChange[0].innerText = "";
+        
+        // 수정 버튼을 누른 후 바뀌는 ok 버튼을 클릭 시 수정 완료
+        okImg[i].addEventListener('click', () => {
+            text = inputChange.value;
+            labelChange[0].innerText = text;
+
+            inputChange.type = "checkbox";
+            e.style.display = "inline";
+            removeImg[i].style.display = "inline";
+            okImg[i].style.display = "none";
+            cancelImg[i].style.display = "none";
+
+            for (let j = 0; j < n; j++ ) {
+                const loc = localStorage.getItem(localStorage.key(j));
+                const member = JSON.parse(loc);
+                const idCheck = member.memberIm.id;
+                
+                if ( member.memberIm.login === "on" ) {
+                    member.memberIm.todoList[i].list = text;
+                    const memberS = JSON.stringify(member)
+                    localStorage.setItem(idCheck, memberS);
+                    break;
+                };
+            };
+        });
+
+        // 수정 버튼을 누른 후 바뀌는 cancel 버튼을 클릭 시 
+        // 바뀌지 않고 원래 값으로 
+        cancelImg[i].addEventListener('click', () => {
+            labelChange[0].innerText = text;
+
+            inputChange.type = "checkbox";
+            e.style.display = "inline";
+            removeImg[i].style.display = "inline";
+            okImg[i].style.display = "none";
+            cancelImg[i].style.display = "none";
+        })
     });
 });
+
+
 
 // 목록에 삭제 버튼 클릭 시 해당 목록 삭제
 const removeImg = document.querySelectorAll(".removeImg");

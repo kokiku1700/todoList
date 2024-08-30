@@ -24,7 +24,7 @@ loginBtn[0].addEventListener('click', () => {
 
     if ( loginBool ) {
         idPwErr[0].style.display = "none";
-        location.href = "todoList.html";
+        location.replace("todoList.html");
     } else {
         idPwErr[0].style.display = "block";
     }

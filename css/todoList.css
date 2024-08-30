@@ -161,10 +161,26 @@ b {
     justify-content: left;
 }
 
+.editInput {
+    padding: 3%;
+    border: none;
+    background-color: rgb(223, 119, 119);
+    border-radius: 4px;
+    color: #fff;
+}
+
+.editInput:focus {
+    outline: none;
+}
+
 label {
     font-family: 'KyoboHand';
     font-size: 20px;
     margin-left: 2%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(223, 119, 119);
 }
 
 .list-wrap li span:nth-child(2) {

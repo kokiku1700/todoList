@@ -163,6 +163,6 @@ checkBtn[0].addEventListener('click', () => {
         let values = JSON.stringify(impormation);
         
         localStorage.setItem(key, values);
-        location.href = "jmSuccess.html";
+        location.replace("jmSuccess.html");
     }
 });
