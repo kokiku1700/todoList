@@ -22,5 +22,7 @@ checkBtn[0].addEventListener("click", () => {
         const li = document.createElement("li");
         li.innerText = pw;
         pwList[0].appendChild(li);
+    } else {
+        location.replace("nonExistentPw.html");
     }
 });

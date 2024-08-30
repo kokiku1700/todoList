@@ -26,5 +26,7 @@ checkBtn[0].addEventListener("click", () => {
             li.innerText = e;
             idList[0].appendChild(li);
         })
+    } else {
+        location.replace("nonExistentId.html");
     }
 });

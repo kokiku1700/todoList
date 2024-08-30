@@ -32,7 +32,7 @@ html, body {
     background-size: 100% 100%;
 }
 
-#jmSuccess-wrap {
+#nonExistentPw-wrap {
     width: 50%;
     height: 80%;
     border: 2px solid rgb(223, 119, 119);
@@ -44,16 +44,16 @@ html, body {
     position: relative;
 }
 
-#jmSuccess-wrap::-webkit-scrollbar{
+#nonExistentPw-wrap::-webkit-scrollbar{
     width: 10px;
 }
 
-#jmSuccess-wrap::-webkit-scrollbar-track{
+#nonExistentPw-wrap::-webkit-scrollbar-track{
     background-color: white;
     border-radius: 50px;
 }
 
-#jmSuccess-wrap::-webkit-scrollbar-thumb{
+#nonExistentPw-wrap::-webkit-scrollbar-thumb{
     background-color: rgb(223, 119, 119);
     border-radius: 50px;
 }
@@ -78,7 +78,7 @@ html, body {
     }
 }
 
-.welcomeUser {
+.nonExistentPw {
     margin: 20% 0;
     font-family: 'KyoboHand';
     letter-spacing: 3px;
@@ -99,30 +99,30 @@ html, body {
 
 
 @media all and (max-width:1360px) {
-    #jmSuccess-wrap {
+    #nonExistentPw-wrap {
         width: 70%;
     }
-    .welcomeUser {
+    .nonExistentPw {
         margin: 15% 0;
     }
 }
 
 @media all and (max-width:1024px) {
-    #jmSuccess-wrap {
+    #nonExistentPw-wrap {
         width: 70%;
     }
-    .welcomeUser {
+    .nonExistentPw {
         margin: 20% 0;
         font-size: 20px;
     }
 }
 
 @media all and (max-width:768px) {
-    #jmSuccess-wrap {
+    #nonExistentPw-wrap {
         width: 80%;
     }
 
-    .welcomeUser {
+    .nonExistentPw {
         margin: 27% 0;
         font-size: 20px;
     }
